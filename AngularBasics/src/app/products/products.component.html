@@ -1,0 +1,25 @@
+<div>
+<app-search (textChange)="onSearchEntered($event)"></app-search>
+<app-filter [alls]="getAllProducts()"
+[av]="getav()"
+[nav]="getnav()"
+(filterChange)="onbuttonChange($event)"
+></app-filter>
+</div>
+<p>-----------------------------</p>
+<h4>Products</h4>
+<ng-container *ngFor="let item of products">
+    <div *ngIf="productButton==='allProducts' || (productButton =='available' && item.price<7500) || (productButton =='notavailable' && item.price>=7500)">
+        <div *ngIf="searchText== '' || item.name.toLowerCase().includes(searchText)">
+            <p [ngStyle]="{color: item.price<7500?'green':'red'}"> {{ item.name }} - {{ item.price }}</p>
+        <button class="btn btn-success" *ngIf="item.price<7500;else notifyme">Buy Now</button>
+        <ng-template #notifyme>
+            <button class="btn btn-warning">Notify me</button>
+        </ng-template>
+        </div>
+    </div>    
+</ng-container>
+<p>-----------------------------</p>
+<input type="text" #myvariable (keyup)="0">
+<button (click)="sayHello(myvariable)">Say Hello</button>
+<p>{{ myvariable.value }}</p>

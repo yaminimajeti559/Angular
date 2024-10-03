@@ -1,0 +1,11 @@
+.wrapper{
+    margin:0px auto;
+    width:820px;
+    background-color: bisque;
+}
+
+.custom-directive{
+    font-size: medium;
+    background-color: chocolate;
+    font-family: 'Courier New', Courier, monospace;
+}

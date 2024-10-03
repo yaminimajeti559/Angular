@@ -1,0 +1,34 @@
+<p>-----------------------------------------------</p>
+<div class="container">
+    <h4>Smart Phones</h4>
+    <div class="more-products">
+        <app-products2>
+            <h5 class="title">Samsung</h5>           
+        </app-products2>
+        <app-products2>
+            <h5 class="title">Iphone</h5>
+        </app-products2>
+        <app-products2>
+            <h5 class="title">NOkia</h5>
+        </app-products2>
+    </div>
+    <div appHighlight appHover>
+        <p>Ng-Content Example</p>
+        <app-content-child>
+            <p #para>This is para(child)</p>
+        </app-content-child>
+    </div>
+    <div appHighlight2>
+        sample
+    </div>
+    <div appCustomClass [display]="{'custom-directive':true}">
+        <p>This is appClass</p>
+    </div>
+    <button (click)="ConditionChange()">
+        This is for appstyle
+    </button>
+    <div *appIf="condition">
+        This is for Custom structural directive
+    </div>
+</div>
+
