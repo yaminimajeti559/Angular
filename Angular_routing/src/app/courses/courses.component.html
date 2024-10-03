@@ -1,1 +1,13 @@
-<p>courses works!</p>
+<h4 style="justify-self: center;">All Courses</h4>
+<div style="display: flex;padding: 10px;">
+<ng-container *ngFor="let course of courses">
+    <div class="card" style="width: 18rem;background-color: bisque;">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.name }}</h5>
+            <p class="card-text">Author : {{ course.author }}</p>
+            <p class="card-text">Duration : {{ course.duration }} hours</p>
+            <button class="btn btn-success" routerLink="/Courses/Course/{{course.id}}">Show Details</button>
+          </div>
+    </div>
+</ng-container>
+</div>

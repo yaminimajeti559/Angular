@@ -8,6 +8,7 @@ import { ABoutComponent } from './about/about.component';
 import { CoursesComponent } from './courses/courses.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
+import { CourseComponent } from './courses/course/course.component';
 
 
 const routes: Routes=[
@@ -15,6 +16,7 @@ const routes: Routes=[
   {path:'Home',component:HomeComponent},
   {path:'About',component:ABoutComponent},
   {path:'Courses',component:CoursesComponent},
+  {path:'Courses/Course/:id',component:CourseComponent},
   {path:'**',component:ErrorComponent}
 ]
 @NgModule({
@@ -23,7 +25,8 @@ const routes: Routes=[
     HomeComponent,
     ABoutComponent,
     CoursesComponent,
-    ErrorComponent
+    ErrorComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,

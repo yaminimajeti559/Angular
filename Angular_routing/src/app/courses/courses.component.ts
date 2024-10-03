@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent {
-
+    constructor(private service:CoursesService){}
+    courses=this.service.courses;
 }
