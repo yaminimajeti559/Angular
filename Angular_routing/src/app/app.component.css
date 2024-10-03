@@ -1,0 +1,17 @@
+.navbar-nav .nav-link {
+    color: blueviolet;  
+}
+
+.navbar-nav .nav-link:hover {
+    color: black;  
+}
+
+.navbar-brand{
+    color: red;
+}
+.navbar{
+    padding: 10px 100px 10px 100px;
+}
+.active{
+    color: black;
+}
