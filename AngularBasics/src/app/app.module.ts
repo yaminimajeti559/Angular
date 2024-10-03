@@ -11,7 +11,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { SearchComponent } from './search/search.component';
 import { ProductsComponent } from './products/products.component';
 import { FilterComponent } from './filter/filter.component';
-import { SampleComponent } from './sample/sample.component';
+import { SampleComponent } from './LocalReferenceVariable/sample.component';
 import { Sample2Component } from './sample2/sample2.component';
 import { Products2Component } from './products2/products2.component';
 import { ContentChildComponent } from './content-child/content-child.component';
