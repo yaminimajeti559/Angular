@@ -12,7 +12,7 @@ import { CourseComponent } from './courses/course/course.component';
 
 
 const routes: Routes=[
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/Home', pathMatch: 'full' },
   {path:'Home',component:HomeComponent},
   {path:'About',component:ABoutComponent},
   {path:'Courses',component:CoursesComponent},
