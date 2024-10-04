@@ -14,12 +14,15 @@ import { DownComponent } from './down/down.component';
 import { UpComponent } from './up/up.component';
 import { CourseGuardService } from './course-guard.service';
 import { AuthService } from './auth.service';
+import { ContactComponent } from './contact/contact.component';
+import { CandeactivateService } from './candeactivate.service';
 
 
 const routes: Routes=[
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   {path:'Home',component:HomeComponent},
   {path:'About',component:ABoutComponent},
+  {path:'Contact',component:ContactComponent,canDeactivate:[CandeactivateService]},
   {path:'Courses',component:CoursesComponent,canActivate:[CourseGuardService]},
   {path:'Courses/Course/:id',component:CourseComponent},
   {path:'**',component:ErrorComponent}
@@ -33,7 +36,8 @@ const routes: Routes=[
     ErrorComponent,
     CourseComponent,
     DownComponent,
-    UpComponent
+    UpComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,7 @@ const routes: Routes=[
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CourseGuardService,AuthService],
+  providers: [CourseGuardService,AuthService,CandeactivateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
