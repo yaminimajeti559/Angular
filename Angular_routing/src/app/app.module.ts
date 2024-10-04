@@ -9,13 +9,18 @@ import { CoursesComponent } from './courses/courses.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { CourseComponent } from './courses/course/course.component';
+import { FormsModule } from '@angular/forms';
+import { DownComponent } from './down/down.component';
+import { UpComponent } from './up/up.component';
+import { CourseGuardService } from './course-guard.service';
+import { AuthService } from './auth.service';
 
 
 const routes: Routes=[
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   {path:'Home',component:HomeComponent},
   {path:'About',component:ABoutComponent},
-  {path:'Courses',component:CoursesComponent},
+  {path:'Courses',component:CoursesComponent,canActivate:[CourseGuardService]},
   {path:'Courses/Course/:id',component:CourseComponent},
   {path:'**',component:ErrorComponent}
 ]
@@ -26,14 +31,17 @@ const routes: Routes=[
     ABoutComponent,
     CoursesComponent,
     ErrorComponent,
-    CourseComponent
+    CourseComponent,
+    DownComponent,
+    UpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CourseGuardService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

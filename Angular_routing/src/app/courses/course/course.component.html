@@ -1,10 +1,17 @@
 <div class="card" style="width: 18rem;background-color: aqua;margin: 20px;">
     <div class="card-body">
-      <h5 class="card-title">{{ course.name }}</h5>
+      <h5 class="card-title" *ngIf="!editMode">{{ course.name }}</h5>
+      <div *ngIf="editMode">
+        <input type="text" [(ngModel)]="course.name">
+      </div>
       <p class="card-text">Author : {{ course.author }}</p>
       <p class="card-text">Duration : {{ course.duration }} hours</p>
       <p class="card-text">Price : {{ course.price }} </p>
       <p class="card-text">Rating : {{ course.ratings }}</p>
     </div>
   </div>
-  <a routerLink="/Courses">Go to All Sources</a>
+  <!-- <a routerLink="/Courses">Go to All Sources</a> -->
+  <!-- <button [routerLink]="['/Courses/Course',course.id]" [queryParams]="{edit:true}">Edit</button> -->
+
+  <button (click)="appendQuery()">Edit</button>
+  <button (click)="editMode=false" [routerLink]="['/Courses/Course',course.id]">Update</button>
