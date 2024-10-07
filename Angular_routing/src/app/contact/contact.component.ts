@@ -11,7 +11,7 @@ export class ContactComponent {
   subject: any;
   canExit(){
     if(this.firstname || this.lastname || this.subject){
-      return confirm('You have unsaved chnages.Do you really want to discard changes');
+      return confirm('You have unsaved changes.Do you really want to discard changes');
     }
     else{
       return true;

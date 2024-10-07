@@ -16,6 +16,9 @@ import { CourseGuardService } from './course-guard.service';
 import { AuthService } from './auth.service';
 import { ContactComponent } from './contact/contact.component';
 import { CandeactivateService } from './candeactivate.service';
+import { StudentsComponent } from './students/students.component';
+import { percentagePipe } from './Percentage.pipe';
+import { FilterPipe } from './filter.pipe';
 
 
 const routes: Routes=[
@@ -25,6 +28,7 @@ const routes: Routes=[
   {path:'Contact',component:ContactComponent,canDeactivate:[CandeactivateService]},
   {path:'Courses',component:CoursesComponent,canActivate:[CourseGuardService]},
   {path:'Courses/Course/:id',component:CourseComponent},
+  {path:'Students',component:StudentsComponent},
   {path:'**',component:ErrorComponent}
 ]
 @NgModule({
@@ -37,13 +41,16 @@ const routes: Routes=[
     CourseComponent,
     DownComponent,
     UpComponent,
-    ContactComponent
+    ContactComponent,
+    StudentsComponent,
+    percentagePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{enableTracing:true})
   ],
   providers: [CourseGuardService,AuthService,CandeactivateService],
   bootstrap: [AppComponent]

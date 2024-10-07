@@ -11,5 +11,14 @@ export class CoursesService {
     { id:102,name:'Angular',author:'Arjun',duration:25,price:7.00,ratings:3.5},
     { id:103,name:'React',author:'John',duration:22,price:8.00,ratings:4.5},
     { id:104,name:'.Net',author:'John',duration:24,price:10.00,ratings:4.2}
-  ]
+  ];
+
+  getAllCourses():any{
+    const courseList=new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        resolve(this.courses);
+      }, 400);
+    })
+    return courseList;
+  }
 }

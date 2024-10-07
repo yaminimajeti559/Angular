@@ -8,5 +8,7 @@ import { CoursesService } from '../courses.service';
 })
 export class CoursesComponent {
     constructor(private service:CoursesService){}
-    courses=this.service.courses;
+    courses=this.service.getAllCourses().then((data:any)=>{
+      this.courses=data;
+    });
 }
