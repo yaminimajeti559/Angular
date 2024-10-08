@@ -1,32 +1,47 @@
 <div clas="card">
     <h3 id="register">Registration</h3>
     <form  (ngSubmit)="onSubmit()" #myForm="ngForm">
-        <label for="fname">FirstName    : </label>
-        <input type="text" id="fname" placeholder="Your name.." name="firstname" [(ngModel)]="firstname" required #fname="ngModel" ><br>
-        <div *ngIf="fname.invalid && fname.touched"><small>Firstname is required </small></div><br>
 
-
-        <label for="lname">LastName         :</label>
-        <input type="text" id="lname" placeholder="Your last name.." name="lastName" [(ngModel)]="lastName"  required #lname="ngModel"><br>
-        <div *ngIf="lname.invalid && fname.touched"><small>Lastname is required </small></div><br><br>
-
-        <label for="email">Email        :</label>
-        <input type="email" id="email" placeholder="Your email.." name="emailid" [(ngModel)]="emailid" required email #email="ngModel"><br>
-        <div *ngIf="email.invalid && fname.touched"><small>Email is required </small></div><br><br>
+        <div ngModelGroup="personalDetails" #personalDetails="ngModelGroup">
+            <label for="fname">FirstName    : </label>
+            <input type="text" id="fname" placeholder="Your name.." name="firstname" [(ngModel)]="firstname" required #fname="ngModel" ><br>
+            <!-- <div *ngIf="fname.invalid && fname.touched"><small>Firstname is required </small></div><br> -->
+    
+    
+            <label for="lname">LastName         :</label>
+            <input type="text" id="lname" placeholder="Your last name.." name="lastName" [(ngModel)]="lastName"  required #lname="ngModel"><br>
+            <!-- <div *ngIf="lname.invalid && fname.touched"><small>Lastname is required </small></div><br> -->
+    
+            <label for="email">Email        :</label>
+            <input type="email" id="email" placeholder="Your email.." name="emailid" [(ngModel)]="emailid" required email #email="ngModel"><br>
+            <!-- <div *ngIf="email.invalid && fname.touched"><small>Email is required </small></div><br> -->
+            <div *ngIf="personalDetails.invalid && personalDetails.touched"><small>Some fields are required </small></div><br>
+            <button (click)="setDefault()">Set default values</button>
+        </div>
 
         <label for="country">Country    :</label>
-        <select id="country" ngmodel>
-            <option value="India">India</option>
-            <option value="India" >UK</option>
-            <option value="India">USA</option>
+        <select id="country" ngModel>
+            <option value="India" >India</option>
+            <option value="Uk" >UK</option>
+            <option value="USA" >USA</option>
         </select>
         <br><br>
         <label for="gender">Gender                :</label>
-        <input type="radio" id="male" value="male" name="gender" ngmodel>
-        <label for="male">Male</label>
-        <input type="radio" id="female" value="female" name="gender" ngmodel>
-        <label for="female">Female</label><br><br>
-           
-        <input type="submit" class="btn btn-primary" value="submit" id="btn" [disabled]="myForm.invalid">
+        <span *ngFor="let gen of gender">
+            <input type="radio" id="{{gen.id}}" value="{{gen.value}}" name="gender" ngModel >
+            <label for="male">{{gen.value}}</label>
+         </span>
+        <!-- <input type="radio" id="female" value="female" name="gender" ngmodel>
+        <label for="female">Female</label><br><br> -->
+           <br><br>
+        <input type="submit" class="btn btn-primary" value="submit" id="btn" >
     </form>
+</div>
+<div>
+    <h3>Form-Data</h3>
+    <p>Firstname : {{firstname}}</p>
+    <p>Lastname : {{lastName}}</p>
+    <p>EmailId : {{emailid}}</p>
+    <p>Gender : {{gen}}</p>
+    <p>Country : {{country}}</p>
 </div>
