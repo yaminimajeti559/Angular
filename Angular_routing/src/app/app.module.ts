@@ -19,6 +19,7 @@ import { CandeactivateService } from './candeactivate.service';
 import { StudentsComponent } from './students/students.component';
 import { percentagePipe } from './Percentage.pipe';
 import { FilterPipe } from './filter.pipe';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 
 const routes: Routes=[
@@ -29,6 +30,7 @@ const routes: Routes=[
   {path:'Courses',component:CoursesComponent,canActivate:[CourseGuardService]},
   {path:'Courses/Course/:id',component:CourseComponent},
   {path:'Students',component:StudentsComponent},
+  {path:'Register',component:TemplateFormsComponent},
   {path:'**',component:ErrorComponent}
 ]
 @NgModule({
@@ -44,7 +46,8 @@ const routes: Routes=[
     ContactComponent,
     StudentsComponent,
     percentagePipe,
-    FilterPipe
+    FilterPipe,
+    TemplateFormsComponent
   ],
   imports: [
     BrowserModule,
