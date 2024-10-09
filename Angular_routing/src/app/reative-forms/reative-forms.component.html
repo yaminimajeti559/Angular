@@ -1,0 +1,38 @@
+<div class="card">
+    <h3 id="register">Registration</h3>
+    <form  [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+
+            <label for="fname">FirstName    : </label>
+            <input type="text" id="fname" placeholder="Your name.." formControlName="firstname" ><br>    
+    
+            <label for="lname">LastName         :</label>
+            <input type="text" id="lname" placeholder="Your last name.." formControlName="lastname"><br>
+    
+            <label for="email">Email        :</label>
+            <input type="email" id="email" placeholder="Your email.." formControlName="emailid" ><br>
+
+        <label for="country">Country    :</label>
+        <select id="country" formControlName="country">
+            <option value="India" >India</option>
+            <option value="Uk" >UK</option>
+            <option value="USA" >USA</option>
+        </select>
+
+        <br><br>
+        <label for="gender">Gender                :</label>
+        <input type="radio" id="male" value="male" formControlName="gender">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" value="female" formControlName="gender">
+        <label for="female">Female</label><br><br>
+           <br><br>
+        <input type="submit" class="btn btn-primary" value="submit" id="btn" >
+    </form>
+</div>
+<!-- <div>
+    <h3>Form-Data</h3>
+    <p>Firstname : {{firstname}}</p>
+    <p>Lastname : {{lastName}}</p>
+    <p>EmailId : {{emailid}}</p>
+    <p>Gender : {{gen}}</p>
+    <p>Country : {{country}}</p>
+</div> -->

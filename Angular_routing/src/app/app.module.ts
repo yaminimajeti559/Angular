@@ -20,6 +20,8 @@ import { StudentsComponent } from './students/students.component';
 import { percentagePipe } from './Percentage.pipe';
 import { FilterPipe } from './filter.pipe';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { HttpRequestComponent } from './http-request/http-request.component';
+import { HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes=[
@@ -47,12 +49,14 @@ const routes: Routes=[
     StudentsComponent,
     percentagePipe,
     FilterPipe,
-    TemplateFormsComponent
+    TemplateFormsComponent,
+    HttpRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes,{enableTracing:true})
   ],
   providers: [CourseGuardService,AuthService,CandeactivateService],

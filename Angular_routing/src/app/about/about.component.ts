@@ -11,4 +11,6 @@ export class ABoutComponent {
   ToHome(){
       this.route.navigate(['Home']);
   }
+
+  
 }
