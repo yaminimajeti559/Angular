@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-reative-forms',
-  templateUrl: './reative-forms.component.html',
-  styleUrls: ['./reative-forms.component.css']
+  selector: 'app-reactive-forms',
+  templateUrl: './reactive-forms.component.html',
+  styleUrls: ['./reactive-forms.component.css']
 })
-export class ReativeFormsComponent {
+export class ReactiveFormsComponent {
   reactiveform!: FormGroup;
 
   ngOnInit(){

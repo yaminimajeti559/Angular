@@ -9,7 +9,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { CourseComponent } from './courses/course/course.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DownComponent } from './down/down.component';
 import { UpComponent } from './up/up.component';
 import { CourseGuardService } from './course-guard.service';
@@ -22,6 +22,7 @@ import { FilterPipe } from './filter.pipe';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { HttpRequestComponent } from './http-request/http-request.component';
 import { HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 const routes: Routes=[
@@ -33,6 +34,7 @@ const routes: Routes=[
   {path:'Courses/Course/:id',component:CourseComponent},
   {path:'Students',component:StudentsComponent},
   {path:'Register',component:TemplateFormsComponent},
+  //{path:'RForms',component:reactivefo}
   {path:'**',component:ErrorComponent}
 ]
 @NgModule({
@@ -50,7 +52,8 @@ const routes: Routes=[
     percentagePipe,
     FilterPipe,
     TemplateFormsComponent,
-    HttpRequestComponent
+    HttpRequestComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,

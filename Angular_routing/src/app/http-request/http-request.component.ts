@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { map } from 'rxjs';
 import { Product } from '../model/products';
+import { ProductserviceService } from '../productservice.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-http-request',
@@ -10,13 +12,25 @@ import { Product } from '../model/products';
 })
 export class HttpRequestComponent {
 
+  @ViewChild('productsForm') form:NgForm;
+  editMode:boolean=false;
   allproducts:Product[]=[];
-  constructor(private http:HttpClient){}
+  currentProductId:string;
+  errorMessage:string=null;
+  constructor(private productservice:ProductserviceService){}
+
       onProductCreate(products:{pName:string,desc:string,price:string}){
-          this.http.post('https://angularrouting-f51da-default-rtdb.firebaseio.com/products.json',products)
-          .subscribe((res)=>{
-              console.log(res);
-          });
+        if(!this.editMode){
+          this.productservice.createProduct(products);
+          alert('Product Added,Click Fetch Products to view the added product.');
+          this.form.reset();
+        }
+        else{
+          this.productservice.updateProduct(this.currentProductId,products);
+          alert('Product Updated');
+          this.editMode=false;
+          this.form.reset();
+        }
       }
 
       ngOnInit(){
@@ -28,30 +42,33 @@ export class HttpRequestComponent {
       }
 
       private fetchProducts(){
-        this.http.get<{[key:string]:Product}>('https://angularrouting-f51da-default-rtdb.firebaseio.com/products.json')
-        .pipe(map((res:{[key:string]:Product})=>{
-          const products=[];
-          for(const key in res){
-            if(res.hasOwnProperty(key)){
-              products.push({...res[key],id:key})
-            }             
-          }
-          return products;
-        }))
-        .subscribe((products)=>{
-            this.allproducts=products;
-        })
+          this.productservice.fetchProduct().subscribe((products)=>{
+              this.allproducts=products;
+          },(err)=>{
+            this.errorMessage=err.message;
+          })
       }
 
       onDeleteProduct(id:string){
-        this.http.delete('https://angularrouting-f51da-default-rtdb.firebaseio.com/products/'+id+'.json')
-        .subscribe(()=>{
-          alert('Product deleted');
-        });
+        this.productservice.deleteProduct(id);
+        this.productservice.fetchProduct();
       }
 
       onDeleteAllProduct(){
-        this.http.delete('https://angularrouting-f51da-default-rtdb.firebaseio.com/products.json')
-        .subscribe();
+        this.productservice.deleteAllProducts();
+        this.productservice.fetchProduct();
+      }
+
+      onUpdateCLick(id:string){
+        this.currentProductId=id;
+          let currentProduct=this.allproducts.find((p)=>{ return p.id==id});
+
+          this.form.setValue({
+            pName:currentProduct.pName,
+            desc:currentProduct.desc,
+            price:currentProduct.price
+          });
+
+          this.editMode=true;
       }
 }

@@ -11,8 +11,6 @@
           <form #productsForm="ngForm" (ngSubmit)="onProductCreate(productsForm.value)">
             <label>Procuct Name</label>
             <input type="text" name="pName" ngModel>
-        
-            
             
             <label>Procuct Description</label>
             <input type="text" name="desc" ngModel>
@@ -20,8 +18,10 @@
             <label>Procuct Price</label>
             <input type="text" name="price" ngModel>
   
-            <input type="submit" value="Add Product">
+            <input type="submit" value="{{editMode?'Update Product':'Add Product'}}">
           </form>
+          
+          <span><b>Note : </b><p>please click on Fetch products after every operation to view Changes in Products. </p></span>
         </div>
   
         <!--Display product area-->
@@ -38,18 +38,23 @@
             <tr *ngIf="allproducts.length<1">
                 <td> No Products available</td>
             </tr>
+            <tr *ngIf="errorMessage!=null">
+              <td> {{errorMessage}}</td>
+          </tr>
             <tr *ngFor="let prod of allproducts;index as i">
               <td>{{i + 1}}</td>
               <td>{{ prod.pName }}</td>
               <td>{{ prod.desc }}</td>
               <td>{{ prod.price }}</td>
               <td><button class="btn-delete" (click)="onDeleteProduct(prod.id)">Delete</button></td>
+              <td><button class="btn-update" (click)="onUpdateCLick(prod.id)">Update</button></td>
             </tr>
           </table>
           <hr>
           <div class="action-btn-container">
             <button class="btn-fetch" (click)="onProductsFetch()">Fetch Products</button>
             <button class="btn-clear" (click)="onDeleteAllProduct()">Clear All Products</button>
+            
           </div>
         </div>
       </div>
