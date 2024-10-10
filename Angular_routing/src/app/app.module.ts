@@ -34,7 +34,7 @@ const routes: Routes=[
   {path:'Courses/Course/:id',component:CourseComponent},
   {path:'Students',component:StudentsComponent},
   {path:'Register',component:TemplateFormsComponent},
-  //{path:'RForms',component:reactivefo}
+  {path:'RForms',component:ReactiveFormsComponent},
   {path:'**',component:ErrorComponent}
 ]
 @NgModule({
@@ -59,6 +59,7 @@ const routes: Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes,{enableTracing:true})
   ],

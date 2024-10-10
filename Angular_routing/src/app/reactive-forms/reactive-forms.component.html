@@ -1,15 +1,24 @@
-<div class="card">
+<div class="form">
     <h3 id="register">Registration</h3>
     <form  [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
 
             <label for="fname">FirstName    : </label>
-            <input type="text" id="fname" placeholder="Your name.." formControlName="firstname" ><br>    
+            <input type="text" id="firstname" placeholder="Your name.." formControlName="firstname" ><br>    
+            <div *ngIf="!reactiveform.get('firstname').valid">
+                <span style="color: red;">FirstName is required</span>
+            </div>
     
             <label for="lname">LastName         :</label>
-            <input type="text" id="lname" placeholder="Your last name.." formControlName="lastname"><br>
-    
+            <input type="text" id="lastname" placeholder="Your last name.." formControlName="lastname"><br>
+            <div *ngIf="!reactiveform.get('lastname').valid">
+                <span style="color: red;">LastName is required</span>
+            </div>
+
             <label for="email">Email        :</label>
-            <input type="email" id="email" placeholder="Your email.." formControlName="emailid" ><br>
+            <input type="email" id="emailid" placeholder="Your email.." formControlName="emailid" ><br>
+            <div *ngIf="!reactiveform.get('emailid').valid && reactiveform.get('emailid')?.touched">
+                <span style="color: red;">Email is not valid</span>
+            </div>
 
         <label for="country">Country    :</label>
         <select id="country" formControlName="country">
@@ -19,13 +28,13 @@
         </select>
 
         <br><br>
-        <label for="gender">Gender                :</label>
+        <label for="gender">Gender                </label>
         <input type="radio" id="male" value="male" formControlName="gender">
-        <label for="male">Male</label><br>
+        <label for="male">Male</label>
         <input type="radio" id="female" value="female" formControlName="gender">
-        <label for="female">Female</label><br><br>
+        <label for="female">Female</label>
            <br><br>
-        <input type="submit" class="btn btn-primary" value="submit" id="btn" >
+        <input type="submit" class="btn btn-primary" value="submit" id="btn" [disabled]="reactiveform.invalid">
     </form>
 </div>
 <!-- <div>

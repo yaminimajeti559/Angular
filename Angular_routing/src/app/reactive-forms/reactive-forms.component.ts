@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup,Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-reactive-forms',
@@ -7,15 +8,15 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./reactive-forms.component.css']
 })
 export class ReactiveFormsComponent {
-  reactiveform!: FormGroup;
+  reactiveform: FormGroup;
 
   ngOnInit(){
     this.reactiveform=new FormGroup({
-        firstname:new FormControl(null),
-        lastname:new FormControl(null),
-        email:new FormControl(null),
-        country:new FormControl(null),
-        gender:new FormControl(null)
+        firstname:new FormControl('',Validators.required),
+        lastname:new FormControl('',Validators.required),
+        emailid:new FormControl('',[Validators.required,Validators.email]),
+        country:new FormControl(''),
+        gender:new FormControl('')
     });
   }
   onSubmit(){
