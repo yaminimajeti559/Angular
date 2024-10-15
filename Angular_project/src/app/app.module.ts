@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,6 +18,7 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { StudentComponent } from './student/student.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { StudentComponent } from './student/student.component';
     InputTextModule,
     AvatarModule,
     DropdownModule,
-    CardModule
+    CardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
