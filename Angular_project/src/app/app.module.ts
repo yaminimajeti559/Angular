@@ -10,7 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -41,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AvatarModule,
     DropdownModule,
     CardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
