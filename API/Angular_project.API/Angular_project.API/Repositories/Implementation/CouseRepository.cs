@@ -1,6 +1,7 @@
 ﻿using Angular_project.API.Data;
 using Angular_project.API.Model.Domain;
 using Angular_project.API.Repositories.Interface;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Angular_project.API.Repositories.Implementation
 {
@@ -17,6 +18,6 @@ namespace Angular_project.API.Repositories.Implementation
             await dbContext.Courses.AddAsync(course);
             await dbContext.SaveChangesAsync();
             return course;
-        }
+        }       
     }
 }
