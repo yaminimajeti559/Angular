@@ -1,0 +1,30 @@
+<div class="container flex justify-content-center mt-5 col-md-7">
+    <p-card header="Edit Course" styleClass="bgCard">
+       <div class="row">
+        <div class="col-6">
+            <form #editForm (ngSubmit)="UpdateCourse()">
+                <div class="mb-3">
+                    <label for="courseId" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="courseId" readonly 
+                    name="courseId" [(ngModel)]="courseDetails.courseId">
+                </div>
+                <div class="mb-3">
+                    <label for="courseName" class="form-label">Course Name</label>
+                    <input type="text" class="form-control" id="courseName" name="courseName" [(ngModel)]="courseDetails.courseName">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price"  name="price" [(ngModel)]="courseDetails.price">
+                </div>
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Duration</label>
+                    <input type="text" class="form-control" id="duration"  name="duration" [(ngModel)]="courseDetails.duration">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Edit Course</button>
+            </form>
+        </div>
+       </div>
+    </p-card>
+</div>

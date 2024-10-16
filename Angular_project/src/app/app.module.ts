@@ -8,6 +8,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -17,8 +18,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
-import { StudentComponent } from './student/student.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StudentsComponent } from './students/students.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddCourseComponent,
     CoursesComponent,
     HomeComponent,
-    StudentComponent
+    StudentsComponent,
+    AddStudentComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     DropdownModule,
     CardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

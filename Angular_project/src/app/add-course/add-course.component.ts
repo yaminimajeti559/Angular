@@ -3,6 +3,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { addCourseRequest } from '../Models/add-course.model';
 import { CourseService } from '../services/course.service';
 import { Subscribable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -12,7 +13,7 @@ import { Subscribable, Subscription } from 'rxjs';
 export class AddCourseComponent implements OnDestroy{
   model:addCourseRequest;
   private addCourseSubscription?:Subscription;
-  constructor(private fb:FormBuilder,private courseservice:CourseService){
+  constructor(private fb:FormBuilder,private courseservice:CourseService,private router:Router){
     this.model={
       courseName:'',
       description:'',
@@ -39,6 +40,7 @@ export class AddCourseComponent implements OnDestroy{
       .subscribe({
         next:(res)=>{
          alert('Course added');
+         this.router.navigate(['/Admin/Courses']);
         },error:(error)=>{
 
         }
