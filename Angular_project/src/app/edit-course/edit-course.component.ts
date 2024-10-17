@@ -41,7 +41,7 @@ export class EditCourseComponent implements OnInit{
       .subscribe({
         next:(res)=>{
           alert('updated course');
-          
+          this.router.navigate(['/Admin/Courses']);
         }
       });
     }

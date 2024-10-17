@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentsComponent } from './students/students.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     HomeComponent,
     StudentsComponent,
     AddStudentComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

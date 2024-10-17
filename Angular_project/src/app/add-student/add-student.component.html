@@ -1,1 +1,30 @@
-<p>add-student works!</p>
+<div class="container flex justify-content-center mt-5 col-md-7">
+    <p-card header="Add Student">
+        <form [formGroup]="studentForm" (ngSubmit)="addStudent()">
+            <div>
+                <label for="name" style="padding: 0px 90px 20px 20px;">student Name</label>
+                <input type="text" pInputText placeholder="Enter student name" formControlName="name"/><br>
+                <small class="p-error block " style="padding-left: 205px;" 
+                *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.dirty">
+                StudentName is required</small>
+            </div>
+            <div>
+                <label for="email" style="padding: 20px 90px 20px 20px;">student E-mail</label>
+                <input type="text" pInputText placeholder="Enter Email" formControlName="email"/><br>
+                <small class="p-error block " style="padding-left: 205px;" *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.dirty">
+                    <span *ngIf="studentForm.get('email')?.errors?.['required']">Email is required</span>
+                    <span *ngIf="studentForm.get('email')?.errors?.['email']">Email must be valid.</span>
+                </small>
+            </div>
+            <div>
+                <label for="age" style="padding: 20px 160px 20px 20px;">Age</label>
+                <input type="text" pInputText placeholder="Enter age" formControlName="age"/><br>
+                <small class="p-error block " style="padding-left: 205px;" *ngIf="studentForm.get('age')?.invalid && studentForm.get('age')?.dirty">
+                    <span *ngIf="studentForm.get('age')?.errors?.['required']">Age is required</span>
+                    <span *ngIf="studentForm.get('age')?.errors?.['pattern']">Age must be valid integer</span>
+                </small>
+            </div>
+            <button pButton type="submit" label="Submit" [disabled]="studentForm.invalid"></button>
+        </form>
+    </p-card>
+</div>

@@ -1,0 +1,34 @@
+<div class="container flex justify-content-center mt-5 col-md-7">
+    <p-card header="Edit Student" styleClass="bgCard">
+       <div class="row">
+        <div class="col-6">
+            <form #editForm (ngSubmit)="UpdateStudent()">
+                <div class="mb-3">
+                    <label for="studentId" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="studentId" readonly 
+                    name="studentId" [(ngModel)]="studentDetails.studentId">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">student Name</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="studentDetails.name">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="age"  name="age" [(ngModel)]="studentDetails.age">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email"  name="email" [(ngModel)]="studentDetails.email">
+                </div>
+                <div class="mb-3">
+                    <label for="joiningDate" class="form-label">joining Date</label>
+                    <input type="text" class="form-control" id="joiningDate" readonly name="joiningDate" [(ngModel)]="studentDetails.joiningDate">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Edit student</button>
+            </form>
+        </div>
+       </div>
+    </p-card>
+</div>
