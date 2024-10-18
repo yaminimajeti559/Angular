@@ -28,7 +28,7 @@ export class EnrollComponent {
   onDeptChange(dept: string) {
     this.viewcontainerref.clear();
     this.selectedDept = dept;
-    if(this.selectedDept === 'Cse')
+    if(this.selectedDept === 'CSE')
       this.viewcontainerref.createComponent(CSEComponent);
     else if(this.selectedDept === 'Civil')
             this.viewcontainerref.createComponent(CivilComponent);
