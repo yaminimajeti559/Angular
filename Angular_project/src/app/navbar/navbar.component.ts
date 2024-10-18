@@ -30,6 +30,11 @@ export class NavbarComponent implements OnInit{
                 routerLink:['/Admin/Courses']
               }
           ]
+        },
+        {
+          label:'Enroll',
+          icon:'pi pi-book',
+          routerLink:['/Enroll']
         }
       ]
     }

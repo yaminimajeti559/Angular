@@ -7,8 +7,13 @@ import { StudentsComponent } from './students/students.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { EnrollComponent } from './enroll/enroll.component';
 
 const routes: Routes = [
+  {
+    path:'',
+    component:HomeComponent
+  },
   {
     path:'addCourse',
     component:AddCourseComponent
@@ -40,6 +45,10 @@ const routes: Routes = [
   {
     path:'Admin/Students/Edit/:id',
     component:EditStudentComponent
+  },
+  {
+    path:'Enroll',
+    component:EnrollComponent
   }
 ];
 

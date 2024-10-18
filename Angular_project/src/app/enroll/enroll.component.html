@@ -1,0 +1,33 @@
+<div class="container flex justify-content-center mt-5 col-md-7">
+    <p-card header="Enroll Here">
+        <form [formGroup]="enrollForm">
+          <div class="p-field">
+            <label for="studentId" style="padding-right: 30px;">Student ID</label>
+            <input id="studentId" pInputText formControlName="studentId" />
+          </div>
+          <br>
+          <div class="p-field">
+            <label for="dept" style="padding-right: 20px;">Department</label>
+            <p-dropdown
+              id="dept"
+              [options]="departments"
+              formControlName="dept"
+              placeholder="Select Department"
+              (onChange)="onDeptChange($event.value)">
+            </p-dropdown>
+          </div>
+        </form>
+    </p-card>
+        <!-- <div *ngIf="selectedDept === 'CSE'">
+          <app-cse></app-cse>
+        </div>
+      
+        <div *ngIf="selectedDept === 'Civil'">
+          <app-civil></app-civil>
+        </div>
+    
+        <div *ngIf="selectedDept === 'Chemical'">
+            <app-chemical></app-chemical>
+          </div> -->
+</div>
+  

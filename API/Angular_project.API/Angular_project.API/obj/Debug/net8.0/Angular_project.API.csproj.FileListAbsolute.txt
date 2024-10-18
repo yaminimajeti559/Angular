@@ -141,3 +141,8 @@ C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_proje
 C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\obj\Debug\net8.0\Angular_project.API.pdb
 C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\obj\Debug\net8.0\Angular_project.API.genruntimeconfig.cache
 C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\obj\Debug\net8.0\ref\Angular_project.API.dll
+C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\mvyamini\Desktop\Angular_Training\API\Angular_project.API\Angular_project.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

@@ -23,6 +23,10 @@ import { StudentsComponent } from './students/students.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { EnrollComponent } from './enroll/enroll.component';
+import { CSEComponent } from './cse/cse.component';
+import { CivilComponent } from './civil/civil.component';
+import { ChemicalComponent } from './chemical/chemical.component';
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     StudentsComponent,
     AddStudentComponent,
     EditCourseComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    EnrollComponent,
+    CSEComponent,
+    CivilComponent,
+    ChemicalComponent
   ],
   imports: [
     BrowserModule,
